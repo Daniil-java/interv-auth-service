@@ -1,4 +1,4 @@
-package com.kuklin.authservice.configurations;
+package com.kuklin.authentication.configurations;
 
 import feign.codec.Encoder;
 import org.springframework.boot.autoconfigure.http.HttpMessageConverters;
