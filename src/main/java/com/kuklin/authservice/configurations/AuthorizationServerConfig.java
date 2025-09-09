@@ -1,4 +1,4 @@
-package com.kuklin.security.configurations;
+package com.kuklin.authservice.configurations;
 
 import java.security.KeyPair;
 import java.security.KeyPairGenerator;

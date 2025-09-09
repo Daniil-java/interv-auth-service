@@ -1,6 +1,6 @@
-package com.kuklin.security.services;
+package com.kuklin.authservice.services;
 
-import com.kuklin.security.integrations.UserServiceFeignClient;
+import com.kuklin.authservice.integrations.UserServiceFeignClient;
 import com.kuklin.sharedlibrary.UserDto;
 import lombok.RequiredArgsConstructor;
 import org.springframework.security.authentication.AuthenticationProvider;

@@ -1,6 +1,6 @@
-package com.kuklin.security.integrations;
+package com.kuklin.authservice.integrations;
 
-import com.kuklin.security.configurations.FeignClientConfig;
+import com.kuklin.authservice.configurations.FeignClientConfig;
 import com.kuklin.sharedlibrary.UserDto;
 import org.springframework.cloud.openfeign.FeignClient;
 import org.springframework.web.bind.annotation.*;

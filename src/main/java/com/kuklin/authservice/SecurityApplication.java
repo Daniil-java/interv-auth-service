@@ -1,4 +1,4 @@
-package com.kuklin.security;
+package com.kuklin.authservice;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
