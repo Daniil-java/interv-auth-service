@@ -1,10 +1,30 @@
 server:
   port: 9000
+#  Это заставит Spring MVC/Servlet контейнер учитывать Forwarded/X-Forwarded-*
+#  при построении абсолютных ссылок и редиректов.
+  forward-headers-strategy: native
 
 spring:
+  application:
+    name: auth-service
   thymeleaf:
     prefix: classpath:/templates/
     suffix: .html
+  security:
+    oauth2:
+      authorizationserver:
+        issuer: http://localhost:9000
+  datasource:
+    driver-class-name: org.postgresql.Driver
+    password: password
+    username: postgres
+    url: jdbc:postgresql://localhost:5440/security
+  jpa:
+    database: postgresql
+    properties:
+      hibernate:
+        format_sql: true
+    database-platform: org.hibernate.dialect.PostgreSQLDialect
 
 integrations:
   connect-timeout: 5000
@@ -12,3 +32,16 @@ integrations:
   write-timeout: 5000
   user-service:
     url: http://localhost:8081/
+
+eureka:
+  client:
+    register-with-eureka: true
+    fetch-registry: true
+    service-url:
+      defaultZone: http://localhost:8761/eureka/
+
+auth:
+  client:
+    id: frontend-client
+    secret: secret
+    redirect-uri: http://localhost:9000/register
