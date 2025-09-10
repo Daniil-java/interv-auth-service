@@ -1,7 +1,7 @@
 package com.kuklin.authentication.integrations;
 
 import com.kuklin.authentication.configurations.FeignClientConfig;
-import com.kuklin.sharedlibrary.UserDto;
+import com.kuklin.authentication.dtos.UserDto;
 import org.springframework.cloud.openfeign.FeignClient;
 import org.springframework.web.bind.annotation.*;
 
@@ -17,8 +17,9 @@ public interface UserServiceFeignClient {
     @GetMapping("/api/v1/users/{userId}")
     Optional<UserDto> getUserById(@PathVariable Long userId);
 
-    @PostMapping("/api/v1/users/")
+    @PostMapping("/api/v1/users")
     UserDto createUser(@RequestBody UserDto userDto);
-    @GetMapping("/api/v1/users/")
-    UserDto findByName(@RequestParam String userName);
+
+    @GetMapping("/api/v1/users")
+    UserDto getUserByUsername(@RequestParam String username);
 }
