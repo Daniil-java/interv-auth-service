@@ -1,0 +1,14 @@
+server:
+  port: 9000
+
+spring:
+  thymeleaf:
+    prefix: classpath:/templates/
+    suffix: .html
+
+integrations:
+  connect-timeout: 5000
+  read-timeout: 1000000
+  write-timeout: 5000
+  user-service:
+    url: http://localhost:8081/

@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8"/>
+    <title>Login</title>
+</head>
+<body>
+
+<!-- Залогиненный -->
+<div th:if="${remoteUser}">
+    <h2>Welcome, <span th:text="${remoteUser}">User</span>!</h2>
+    <p>You are now logged in.</p>
+    <a th:href="@{/logout}">Logout</a>
+</div>
+
+<!-- Гость -->
+<div th:if="${remoteUser == null}">
+    <h2>Please log in</h2>
+    <form th:action="@{/login}" method="post">
+        <div>
+            <label>Username:</label>
+            <input type="text" name="username" autofocus/>
+        </div>
+        <div>
+            <label>Password:</label>
+            <input type="password" name="password"/>
+        </div>
+        <div>
+            <button type="submit">Sign in</button>
+        </div>
+        <div th:if="${param.error}" style="color:red">
+            Invalid credentials
+        </div>
+        <div th:if="${param.logout}" style="color:green">
+            Logged out successfully
+        </div>
+    </form>
+</div>
+
+</body>
+</html>

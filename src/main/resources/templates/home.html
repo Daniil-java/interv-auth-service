@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+  <meta charset="UTF-8"/>
+  <title>Home</title>
+  <style>
+    body { font-family: Arial, sans-serif; margin: 2em; }
+    .container { max-width: 400px; margin: auto; text-align: center; }
+    a { display: inline-block; margin-top: 1em; }
+  </style>
+</head>
+<body>
+<div class="container">
+  <h1>Welcome!</h1>
+  <p>You have successfully logged in and been redirected here.</p>
+  <a th:href="@{/logout}">Logout</a>
+</div>
+</body>
+</html>
